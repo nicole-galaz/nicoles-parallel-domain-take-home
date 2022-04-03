@@ -7,6 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 
+// Individual Job Listing
 function JobListing({ listing }) {
   return (
     <Stack
@@ -31,17 +32,22 @@ function JobListing({ listing }) {
   );
 }
 
+// Full list of jobs listings
 export default function JobsList({ listings, teams }) {
   return (
     <Box>
       {listings && teams ? (
         [...teams].map((team) => {
+          // Organize the listings per team - so we need to filter
+          // out listings that do not have a matching team for this
+          // team section.
           const teamListings = listings.filter((listing) => {
             return listing.categories.team === team;
           });
 
           return teamListings.length ? (
             <Box key={`box-${team}`}>
+              {/* Team Header */}
               <Typography
                 variant="subtitle1"
                 sx={{ pt: "70px", pb: "20px" }}
@@ -49,11 +55,14 @@ export default function JobsList({ listings, teams }) {
               >
                 {team}
               </Typography>
+              {/* Individual listings for all jobs in this team */}
               {teamListings.map((listing) => (
                 <JobListing listing={listing} key={listing.id} />
               ))}
             </Box>
-          ) : null;
+          ) : // Don't display this section at all (including team header)
+          // if there are no available listings for this team.
+          null;
         })
       ) : (
         // To-do: implement 'no results found'
