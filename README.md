@@ -1,3 +1,6 @@
+# Nicole's version is hosted [here](https://nicole-galaz.github.io/nicoles-parallel-domain-take-home/)
+
+
 # Parallel Domain Front End Engineering Challenge
 
 Welcome candidate and thank you for taking the time to complete the Parallel Domain take-home challenge for our frontend engineer position.
