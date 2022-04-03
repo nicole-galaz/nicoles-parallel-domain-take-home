@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Container, MenuItem, Select, Stack, Typography } from "@mui/material";
 
 function Filter({ valueType, values, updateFilter }) {
-  const defaultValue = `ALL ${valueType.toUpperCase()}`;
+  const defaultValue = `all ${valueType}`;
   const [value, setValue] = useState(defaultValue);
   return (
     <Select
@@ -15,11 +15,14 @@ function Filter({ valueType, values, updateFilter }) {
         setValue(value);
         updateFilter(value === defaultValue ? "" : value);
       }}
+      sx={{ mx: "10px" }}
     >
       {[defaultValue, ...values].map((value) => {
         return (
           <MenuItem value={value} key={`menu-item-${value}`}>
-            {value}
+            <Typography variant="menuItem" sx={{ mx: "2px" }}>
+              {value}
+            </Typography>
           </MenuItem>
         );
       })}
@@ -36,11 +39,23 @@ export default function FilterSet({
   setCommitmentFilter,
 }) {
   return (
-    <Stack direction="row">
-      <Typography>FILTER BY:</Typography>
-      <Container>
+    <Stack
+      direction="row"
+      sx={{ alignItems: "center", pt: "80px", pb: "20px" }}
+    >
+      <Typography
+        sx={{
+          minWidth: "95px",
+          textTransform: "uppercase",
+          fontSize: "14px",
+          letterSpacing: "2px",
+        }}
+      >
+        Filter by:
+      </Typography>
+      <Container sx={{ verticalAlign: "center" }}>
         <Filter
-          valueType="location"
+          valueType="locations"
           values={locations}
           updateFilter={setLocationFilter}
         />

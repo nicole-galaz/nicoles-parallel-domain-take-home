@@ -3,7 +3,6 @@ import {
   Box,
   Button,
   CircularProgress,
-  Container,
   Stack,
   Typography,
 } from "@mui/material";
@@ -13,29 +12,28 @@ function JobListing({ listing }) {
     <Stack
       direction="row"
       justifyContent="space-between"
-      sx={{ borderBottom: 1 }}
+      sx={{ borderBottom: 1, py: "35px" }}
     >
       <Stack>
-        <Typography>{listing.text}</Typography>
-        {/* <Typography variant="h5">
-          {listing.location} / {listing.team}
-        </Typography> */}
-        <p>
+        <Typography variant="h4">{listing.text}</Typography>
+        <Typography variant="subtitle2" sx={{ py: "10px" }}>
           {listing.categories.location} / {listing.categories.team}
-        </p>
+        </Typography>
       </Stack>
-      <a style={{ textDecoration: "none" }} href={listing.hostedUrl}>
-        <Button variant="outlined" color="primary">
-          Apply
-        </Button>
-      </a>
+      <Box sx={{ alignSelf: "center" }}>
+        <a style={{ textDecoration: "none" }} href={listing.hostedUrl}>
+          <Button variant="outlined" color="primary">
+            Apply
+          </Button>
+        </a>
+      </Box>
     </Stack>
   );
 }
 
 export default function JobsList({ listings, teams }) {
   return (
-    <Container>
+    <Box>
       {listings && teams ? (
         [...teams].map((team) => {
           const teamListings = listings.filter((listing) => {
@@ -44,7 +42,11 @@ export default function JobsList({ listings, teams }) {
 
           return teamListings.length ? (
             <Box key={`box-${team}`}>
-              <Typography variant="h5" key={`header-${team}`}>
+              <Typography
+                variant="subtitle1"
+                sx={{ pt: "70px", pb: "20px" }}
+                key={`header-${team}`}
+              >
                 {team}
               </Typography>
               {teamListings.map((listing) => (
@@ -61,6 +63,6 @@ export default function JobsList({ listings, teams }) {
           <CircularProgress />
         </Box>
       )}
-    </Container>
+    </Box>
   );
 }

@@ -41,18 +41,41 @@ const mui = createTheme({
     },
     h4: {
       fontFamily: "Helvetica Neue, Helvetica, Arial, serif",
-      fontSize: "1.4rem",
+      fontSize: "1.5rem",
       color: colors.textLight,
       lineHeight: 1.2,
-      letterSpacing: "-1px",
+      fontWeight: 300,
     },
     body1: {
       color: colors.textLight,
       lineHeight: 1.4,
     },
     body2: {
-      fontSize: "1rem",
+      fontSize: "1.05rem",
+      fontWeight: 500,
+      letterSpacing: "0.2px",
       color: colors.textLight,
+    },
+    subtitle1: {
+      color: colors.primary,
+      textTransform: "uppercase",
+      letterSpacing: "2.25px",
+      fontWeight: 900,
+      fontSize: "0.875rem",
+    },
+    subtitle2: {
+      color: colors.textLight,
+      textTransform: "uppercase",
+      letterSpacing: "2.5px",
+      fontSize: "0.75rem",
+      fontWeight: 400,
+    },
+    menuItem: {
+      textTransform: "uppercase",
+      fontWeight: 400,
+      letterSpacing: "0.5px",
+      fontSize: "0.8rem",
+      lineHeight: 1,
     },
     caption: {
       fontWeight: 500,
@@ -85,12 +108,66 @@ const mui = createTheme({
         },
       },
     },
+    MuiInput: {
+      styleOverrides: {
+        input: {
+          fontSize: 14.5,
+        },
+        underline: {
+          "&:before": {
+            content: "none",
+          },
+          "&:after": {
+            content: "none",
+          },
+        },
+      },
+    },
+    MuiOutlinedInput: {
+      styleOverrides: {
+        input: {
+          padding: "14px",
+          "&.Mui-disabled": {
+            color: "#9b9a9a",
+            WebkitTextFillColor: "#9b9a9a",
+          },
+        },
+      },
+    },
     MuiSelect: {
       styleOverrides: {
+        root: {
+          color: colors.textLight,
+        },
+        icon: {
+          color: colors.textDark,
+        },
         select: {
-          backgroundColor: colors.secondaryVariant1,
           padding: "8px",
           color: colors.textLight,
+          option: {
+            backgroundColor: `${colors.secondaryVariant1} !important`,
+          },
+        },
+      },
+    },
+    MuiMenuItem: {
+      styleOverrides: {
+        root: {
+          backgroundColor: `${colors.secondaryVariant1} !important`,
+          "&.Mui-selected": {
+            backgroundColor: `${colors.secondaryVariant2}`,
+          },
+          "&.Mui-selected:hover": {
+            backgroundColor: `${colors.secondaryVariant2}`,
+          },
+        },
+      },
+    },
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          backgroundColor: `${colors.secondaryVariant1} !important`,
         },
       },
     },

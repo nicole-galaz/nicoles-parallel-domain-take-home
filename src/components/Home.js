@@ -87,27 +87,29 @@ export default function Home() {
     <Box>
       <Banner />
       <Box
-        style={{
+        sx={{
           maxWidth: "1024px",
           width: "100%",
           margin: "0 auto",
           paddingTop: "0px",
-          py: 5,
+          py: 3,
         }}
       >
         <Typography variant="h3" sx={{ textAlign: "center", mb: 2 }}>
           Open Positions
         </Typography>
         <Typography
-          sx={{ textAlign: "center", maxWidth: "768px", margin: "0 auto" }}
+          variant="body2"
+          sx={{
+            textAlign: "center",
+            maxWidth: "768px",
+            margin: "0 auto",
+          }}
         >
           Our data is training and testing autonomous systems at companies
           around the world. We're looking for talented visionaries to help us to
           expand our impact on the way artificial intelligence is developed.
         </Typography>
-        <br />
-        <br />
-        <br />
         <FilterSet
           teams={teams}
           setTeamFilter={setTeamFilter}
