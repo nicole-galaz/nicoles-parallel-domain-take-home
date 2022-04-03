@@ -14,11 +14,11 @@ export default function Banner() {
       }}
     >
       <img
+        alt="Image of a busy street in Santa Monica, CA, with lots of traffic lights"
         src={banner}
         style={{ height: "188px", width: "100%", objectFit: "cover" }}
       />
       <Typography
-        // variant="h2"
         sx={{
           zIndex: "1",
           top: "50%",

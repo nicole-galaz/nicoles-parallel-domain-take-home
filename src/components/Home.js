@@ -55,6 +55,7 @@ export default function Home() {
       newTeams.add(info.team);
       newLocations.add(info.location);
       newCommitments.add(info.commitment);
+      return;
     });
     setTeams(newTeams);
     setLocations(newLocations);
