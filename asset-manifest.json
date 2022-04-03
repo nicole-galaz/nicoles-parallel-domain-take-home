@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.js": "/nicoles-parallel-domain-take-home/static/js/main.692169eb.js",
+    "static/js/787.a33d94db.chunk.js": "/nicoles-parallel-domain-take-home/static/js/787.a33d94db.chunk.js",
+    "static/media/banner.jpeg": "/nicoles-parallel-domain-take-home/static/media/banner.c06e353032e2b29b890a.jpeg",
+    "static/media/logo.svg": "/nicoles-parallel-domain-take-home/static/media/logo.272e22948efaa48b0ea9cf94c90b7bd7.svg",
+    "index.html": "/nicoles-parallel-domain-take-home/index.html",
+    "main.692169eb.js.map": "/nicoles-parallel-domain-take-home/static/js/main.692169eb.js.map",
+    "787.a33d94db.chunk.js.map": "/nicoles-parallel-domain-take-home/static/js/787.a33d94db.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.692169eb.js"
+  ]
+}
